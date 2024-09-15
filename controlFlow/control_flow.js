@@ -39,3 +39,32 @@ console.log("User Category:", userCategory);
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
 console.log("Authentication Status:", authenticationStatus);
+
+// Practice Task
+
+// Suppose an organization arranges a "Dietary Services" program to provide diets to its employees and customers, based on a person's weight and day-to-day routine. You need to create an authorization-based code to provide access to people based on their roles in organization, such as employees, enrolled members for "Dietary Services," and subscribers.
+
+// If the person is an Employee, they are authorized to have access to "Dietary Services".
+
+// If the person is an Enrolled Member, they are authorized to have access to "Dietary Services" and one-on-one interaction with a dietician.
+
+// If the person is a Subscriber, they are authorized to have partial access to facilitate "Dietary Services" only.
+
+// If the person is a Non-Subscriber, they need to enroll or at least subscribe first to avail this facility.
+
+// You need to communicate with the user by printing a message indicating whether that person is eligible to avail which type of services.
+
+let role = "Employee";
+let grantedDietaryServices = false;
+let grantedOneOnOne = false;
+let grantedPartialDietaryService = false;
+if(role === "Employee"){
+    grantedDietaryServices = true;
+} else if (role === "Enrolled Member"){
+    grantedDietaryServices = true;
+    grantedOneOnOne = true;
+}else if (role === "Subscriber"){
+    grantedPartialDietaryService = true;
+}else{}
+
+console.log(grantedDietaryServices & grantedOneOnOne ? "Your are granted the access to Dietary Services and One on One Interaction with A Dietician" : grantedDietaryServices ? "Your Are Granted Dietary Services" : grantedPartialDietaryService ? "You are granted partial access to facilitate dietary services" : "You need to enroll or at least subscribe first to avail this facility");
